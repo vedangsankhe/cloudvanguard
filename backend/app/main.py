@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api import resources, app
+
+app.include_router(resources.router)
+
 app = FastAPI(title="CloudVanguard API", version="0.1.0")
 
 app.add_middleware(
